@@ -1,0 +1,253 @@
+/* ===== Tablet (max-width: 1024px) ===== */
+@media (max-width: 1024px) {
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .test-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .test-sidebar {
+    position: static;
+    order: -1;
+  }
+
+  .question-nav-grid {
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .split-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .split-panel .question-passage {
+    position: static;
+    max-height: 250px;
+  }
+
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Mobile (max-width: 768px) ===== */
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 56px;
+  }
+
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  .page {
+    padding: var(--space-4) 0 var(--space-8);
+  }
+
+  /* Navbar mobile */
+  .navbar-nav {
+    display: none;
+    position: absolute;
+    top: var(--navbar-height);
+    left: 0;
+    right: 0;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    flex-direction: column;
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .navbar-nav.open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    width: 100%;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  /* Stats grid */
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .stat-card {
+    padding: var(--space-3);
+    gap: var(--space-3);
+  }
+
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .stat-info .stat-value {
+    font-size: var(--text-xl);
+  }
+
+  /* Cards */
+  .card {
+    padding: var(--space-4);
+  }
+
+  /* Filter bar */
+  .filter-bar {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .filter-bar .form-select {
+    width: 100%;
+    min-width: unset;
+  }
+
+  /* Grid layouts */
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Question card */
+  .question-stem {
+    font-size: var(--text-base);
+  }
+
+  .choice-btn {
+    padding: var(--space-3);
+  }
+
+  /* Question nav */
+  .question-nav-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  /* Results */
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results-score {
+    font-size: var(--text-3xl);
+  }
+
+  /* Resource layout */
+  .resource-layout {
+    flex-direction: column;
+  }
+
+  .resource-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    min-width: unset;
+    padding-bottom: var(--space-2);
+  }
+
+  .resource-nav-item {
+    border-left: none;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .resource-nav-item.active {
+    border-left-color: transparent;
+    border-bottom-color: var(--color-primary);
+  }
+
+  /* Modal */
+  .modal-overlay {
+    padding: var(--space-4);
+    align-items: flex-end;
+  }
+
+  .modal {
+    max-height: 80vh;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  }
+
+  /* Toast */
+  .toast-container {
+    left: var(--space-4);
+    right: var(--space-4);
+    bottom: var(--space-4);
+  }
+
+  .toast {
+    max-width: 100%;
+  }
+
+  /* Vocab list */
+  .vocab-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tabs */
+  .tabs {
+    gap: 0;
+  }
+
+  .tab {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+  }
+}
+
+/* ===== Small Mobile (max-width: 480px) ===== */
+@media (max-width: 480px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .question-nav-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .question-actions {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .question-actions .btn {
+    width: 100%;
+  }
+
+  .heatmap-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ===== Print ===== */
+@media print {
+  .navbar,
+  .toast-container,
+  .modal-overlay {
+    display: none !important;
+  }
+
+  .main-content {
+    padding-top: 0;
+  }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    break-inside: avoid;
+  }
+}
